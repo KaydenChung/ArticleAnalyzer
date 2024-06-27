@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Analyzer</title>
+</head>
+
+<body>
+
+    <h1>Online PDF Article Keyword Analyzing Tool</h1>
+    <h2>Developed by Kayden Chung</h2>
+    <h2>Assisted by Ali Al-Reda El-Zein</h2>
+    <h3>Created for Manufactured Ecosystems Research</h3>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <label for="path">Upload PDF Files:</label>
+        <input type="file" id="path" name="path" accept=".pdf" multiple required><br><br>
+        
+        <label for="keywords">Keywords (comma-separated):</label>
+        <input type="text" id="keywords" name="keywords" required><br><br>
+        
+        <input type="submit" value="Submit">
+
+    </form>
+</body>
+
+</html>
