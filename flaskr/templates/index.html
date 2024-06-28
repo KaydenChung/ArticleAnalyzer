@@ -5,25 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Article Analyzer</title>
+    <link rel="stylesheet" href="../static/styles.css">
 </head>
 
 <body>
 
-    <h1>Online PDF Article Keyword Analyzing Tool</h1>
-    <h3>Developed by Kayden Chung | Assisted by Ali Al-Reda El-Zein</h3>
-    <h2>Created for Manufactured Ecosystems Research</h2>
+    <div class="header-container">
+        <h1 class="title">Article Keyword Analyzing Tool</h1>
+        <h3 class="authors">Developed by Kayden Chung</h3>
+        <h3 class="authors">Assisted by Ali Al-Reda El-Zein</h3>
+    </div>
 
     <form method="POST" enctype="multipart/form-data">
 
-        <label for="path">Upload PDF Files:</label>
-        <input type="file" id="path" name="path" accept=".pdf" multiple required><br><br>
+        <div class="upload-container">
+            <h2>Upload PDF Files:</h2>
+            <input type="file" id="file-upload" name="articles" accept=".pdf" multiple required style="display:none;">
+            <label for="file-upload" class="upload-btn">Upload Files</label> 
+            <span id="upload-text">No file chosen</span>
+            <br><br>
+        </div>
         
-        <label for="keywords">Keywords (comma-separated):</label>
-        <input type="text" id="keywords" name="keywords" required><br><br>
-        
-        <input type="submit" value="Submit">
+        <div class="keywords-container">
+            <h2>Input Keywords (Comma-Separated):</h2>
+            <textarea id="keywords" name="keywords" rows="2" cols="50" required></textarea><br><br>
+            <input class="submit-btn" type="submit" value="Submit">
+        </div>
 
     </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('file-upload').addEventListener('change', function() {
+                var fileInput = document.getElementById('file-upload');
+                var fileCount = fileInput.files.length;
+                var fileName = fileCount === 1 ? fileInput.files[0].name : fileCount + ' Files Uploaded';
+                document.getElementById('upload-text').textContent = fileName;
+            });
+        });
+    </script>
+
 </body>
 
 </html>

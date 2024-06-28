@@ -1,0 +1,100 @@
+/* Custom Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap');
+
+
+
+/* Body */
+body {
+  background: #333;
+  color: hsl(200, 100%, 90%);
+  max-width: 600px;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+
+
+/* Header Container */
+.header-container {
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+.title {
+  font-family: 'Luckiest Guy';
+  letter-spacing: 0.15rem;
+  line-height: 3rem;
+}
+.authors {
+  font-family: 'Kalam';
+  line-height: 1rem;
+}
+
+
+
+/* Upload Container */
+.upload-container {
+  font-family: 'Kalam';
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+.upload-btn {
+  font-size: 1rem;
+  color: hsl(200, 100%, 50%);
+  background: hsl(200, 100%, 50%, 0.1);
+  padding: 0.25rem 0.5rem;
+  outline: none;
+  border: 2px solid hsl(200, 100%, 50%);
+  border-radius: 5rem;
+  cursor: pointer;
+}
+.upload-btn:hover {
+  background: hsl(200, 100%, 50%, 0.2);
+}
+#upload-text {
+  font-size: 1rem;
+  color: red;
+  margin-left: 1rem;
+}
+
+
+
+/* Keyword Container */
+.keywords-container {
+  font-family: 'Kalam';
+  font-size: 0.8rem;
+  text-align: center;
+}
+#keywords {
+  font-family: 'Kalam';
+  font-size: 1.5rem;
+  color: hsl(200, 100%, 90%);
+  text-align: center;
+  background: hsl(200, 100%, 30%);
+  padding: 0.5rem 0.5rem;
+  outline: none;
+  border: 3px solid hsl(200, 100%, 40%);
+  border-radius: 0.25rem;
+  max-width: 90%;
+}
+#keywords:focus {
+  border: 3px solid hsl(200, 100%, 70%);
+}
+.submit-btn {
+  font-family: 'Kalam';
+  font-size: 1.5rem;
+  color: hsl(200, 100%, 50%);
+  background: hsl(200, 100%, 50%, 0.1);
+  padding: 0.25rem 5rem;
+  outline: none;
+  border: 2px solid hsl(200, 100%, 50%);
+  border-radius: 5rem;
+  cursor: pointer;
+}
+.submit-btn:hover {
+  background: hsl(200, 100%, 50%, 0.2);
+}
