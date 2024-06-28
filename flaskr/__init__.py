@@ -37,7 +37,7 @@ def searchKeywords(filename, text, keywords):
     for keyword in keywords:
         counter = 1
         for sentence in sentences:
-            if keyword.lower() in sentence.lower():
+            if (len(sentence) < 400) and (keyword.lower() in sentence.lower()):
                 data.append({'filename': filename, 'keyword': keyword, 'count': counter, 'sentence': sentence.strip()})
                 counter += 1
     return data
@@ -47,8 +47,9 @@ def searchKeywords(filename, text, keywords):
 
 def index():
     if request.method == 'POST':
-        files = request.files.getlist('articles')
-        keywords = request.form['keywords'].split(',')
+        files = request.files.getlist('articles')[::-1]
+        unfilteredKeywords = request.form['keywords'].split(',')
+        keywords = [keyword.strip() for keyword in unfilteredKeywords if keyword.strip()]
         extendedData = []
         for file in files:
             if file and file.filename.endswith('.pdf'):

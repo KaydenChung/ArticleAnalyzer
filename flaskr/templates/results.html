@@ -4,37 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Results</title>
+    <title>Article Analyzer</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="stylesheet" href="../static/resultsStyles.css">
 </head>
 
 <body>
 
-    <h1>Results</h1>
+    <div class="header-container">
+        <h1>Article Keyword Results</h1>
+        <a class="back-btn" href="{{ url_for('index') }}">Go Back</a>
+    </div>
 
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Filename</th>
-                <th>Keyword</th>
-                <th>Count</th>
-                <th>Relevant Sentence</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for entry in data %}
+    <div class="table-container">
+        <table border="1">
+
+            <thead>
                 <tr>
-                    <td>{{ entry['filename'] }}</td>
-                    <td>{{ entry['keyword'] }}</td>
-                    <td>{{ entry['count'] }}</td>
-                    <td>{{ entry['sentence'] }}</td>
+                    <th>Filename</th>
+                    <th>Keyword</th>
+                    <th>Count</th>
+                    <th>Relevant Sentence</th>
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
 
-    <br>
-    <a href="{{ url_for('index') }}">Go Back</a>
+            <tbody>
+                {% for entry in data %}
+                    <tr>
+                        <td>{{ entry['filename'] }}</td>
+                        <td>{{ entry['keyword'] }}</td>
+                        <td>{{ entry['count'] }}</td>
+                        <td>
+                            {% set highlighted_sentence = entry['sentence'].replace(entry['keyword'], '<mark>' + entry['keyword'] + '</mark>') %}
+                            {{ highlighted_sentence | safe }}
+                        </td>                                                
+                    </tr>
+                {% endfor %}
+            </tbody>
+            
+        </table>
+    </div>
 
-</body>
+</body> 
 
 </html>
