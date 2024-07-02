@@ -47,7 +47,7 @@ def searchKeywords(filename, text, keywords):
 
 def index():
     if request.method == 'POST':
-        files = request.files.getlist('articles')[::-1]
+        files = request.files.getlist('articles')
         unfilteredKeywords = request.form['keywords'].split(',')
         keywords = [keyword.strip() for keyword in unfilteredKeywords if keyword.strip()]
         extendedData = []
